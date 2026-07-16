@@ -1,0 +1,469 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* =====================================================
+   GOOGLE FONT
+===================================================== */
+
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800&display=swap");
+
+/* =====================================================
+   ROOT VARIABLES
+===================================================== */
+
+:root {
+  --primary: #2563eb;
+  --primary-dark: #1d4ed8;
+
+  --secondary: #0f172a;
+
+  --success: #22c55e;
+  --danger: #ef4444;
+  --warning: #f59e0b;
+
+  --background: #f8fafc;
+  --surface: #ffffff;
+
+  --text: #0f172a;
+  --text-light: #64748b;
+
+  --border: #e2e8f0;
+
+  --glass: rgba(255, 255, 255, 0.65);
+
+  --shadow:
+    0 10px 30px rgba(0, 0, 0, 0.08);
+
+  --radius: 14px;
+}
+
+.dark {
+
+  --background: #020617;
+
+  --surface: #0f172a;
+
+  --text: #f8fafc;
+
+  --text-light: #cbd5e1;
+
+  --border: #334155;
+
+  --glass: rgba(15, 23, 42, 0.70);
+
+}
+
+/* =====================================================
+   BASE
+===================================================== */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+
+  scroll-behavior: smooth;
+
+}
+
+body {
+
+  font-family: "Inter", sans-serif;
+
+  background: var(--background);
+
+  color: var(--text);
+
+  transition: .3s;
+
+  overflow-x: hidden;
+
+}
+
+/* =====================================================
+   SCROLLBAR
+===================================================== */
+
+::-webkit-scrollbar {
+
+  width: 8px;
+
+}
+
+::-webkit-scrollbar-track {
+
+  background: transparent;
+
+}
+
+::-webkit-scrollbar-thumb {
+
+  background: var(--primary);
+
+  border-radius: 50px;
+
+}
+
+::-webkit-scrollbar-thumb:hover {
+
+  background: var(--primary-dark);
+
+}
+
+/* =====================================================
+   LINKS
+===================================================== */
+
+a {
+
+  color: inherit;
+
+  text-decoration: none;
+
+}
+
+button {
+
+  cursor: pointer;
+
+  border: none;
+
+}
+
+/* =====================================================
+   IMAGES
+===================================================== */
+
+img {
+
+  max-width: 100%;
+
+  display: block;
+
+}
+
+/* =====================================================
+   CONTAINER
+===================================================== */
+
+.container {
+
+  width: min(1200px, 92%);
+
+  margin-inline: auto;
+
+}
+
+/* =====================================================
+   GLASS EFFECT
+===================================================== */
+
+.glass {
+
+  background: var(--glass);
+
+  backdrop-filter: blur(18px);
+
+  border: 1px solid rgba(255,255,255,.15);
+
+  box-shadow: var(--shadow);
+
+}
+
+/* =====================================================
+   BUTTONS
+===================================================== */
+
+.btn {
+
+  padding: 12px 24px;
+
+  border-radius: var(--radius);
+
+  font-weight: 600;
+
+  transition: .3s;
+
+}
+
+.btn-primary {
+
+  background: var(--primary);
+
+  color: white;
+
+}
+
+.btn-primary:hover {
+
+  background: var(--primary-dark);
+
+}
+
+.btn-outline {
+
+  border: 2px solid var(--primary);
+
+  color: var(--primary);
+
+  background: transparent;
+
+}
+
+.btn-outline:hover {
+
+  background: var(--primary);
+
+  color: white;
+
+}
+
+/* =====================================================
+   CARD
+===================================================== */
+
+.card {
+
+  background: var(--surface);
+
+  border-radius: var(--radius);
+
+  border: 1px solid var(--border);
+
+  box-shadow: var(--shadow);
+
+  transition: .3s;
+
+}
+
+.card:hover {
+
+  transform: translateY(-5px);
+
+}
+
+/* =====================================================
+   INPUT
+===================================================== */
+
+input,
+textarea,
+select {
+
+  width: 100%;
+
+  padding: 12px;
+
+  border-radius: 10px;
+
+  border: 1px solid var(--border);
+
+  background: var(--surface);
+
+  color: var(--text);
+
+  outline: none;
+
+  transition: .3s;
+
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+
+  border-color: var(--primary);
+
+}
+
+/* =====================================================
+   ANIMATIONS
+===================================================== */
+
+.fade-in {
+
+  animation: fade .5s ease;
+
+}
+
+.slide-up {
+
+  animation: slideUp .6s ease;
+
+}
+
+.float {
+
+  animation: floating 4s infinite ease-in-out;
+
+}
+
+@keyframes fade {
+
+  from {
+
+    opacity: 0;
+
+  }
+
+  to {
+
+    opacity: 1;
+
+  }
+
+}
+
+@keyframes slideUp {
+
+  from {
+
+    opacity: 0;
+
+    transform: translateY(30px);
+
+  }
+
+  to {
+
+    opacity: 1;
+
+    transform: translateY(0);
+
+  }
+
+}
+
+@keyframes floating {
+
+  0% {
+
+    transform: translateY(0);
+
+  }
+
+  50% {
+
+    transform: translateY(-10px);
+
+  }
+
+  100% {
+
+    transform: translateY(0);
+
+  }
+
+}
+
+/* =====================================================
+   LOADER
+===================================================== */
+
+.loader {
+
+  width: 45px;
+
+  height: 45px;
+
+  border: 4px solid #ddd;
+
+  border-top-color: var(--primary);
+
+  border-radius: 50%;
+
+  animation: spin .8s linear infinite;
+
+}
+
+@keyframes spin {
+
+  to {
+
+    transform: rotate(360deg);
+
+  }
+
+}
+
+/* =====================================================
+   UTILITIES
+===================================================== */
+
+.text-center {
+
+  text-align: center;
+
+}
+
+.shadow {
+
+  box-shadow: var(--shadow);
+
+}
+
+.rounded {
+
+  border-radius: var(--radius);
+
+}
+
+.mt-2 {
+
+  margin-top: .5rem;
+
+}
+
+.mt-4 {
+
+  margin-top: 1rem;
+
+}
+
+.mt-6 {
+
+  margin-top: 1.5rem;
+
+}
+
+.mb-4 {
+
+  margin-bottom: 1rem;
+
+}
+
+.py-5 {
+
+  padding: 3rem 0;
+
+}
+
+.hidden {
+
+  display: none;
+
+}
+
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+
+@media (max-width:768px){
+
+.container{
+
+width:95%;
+
+}
+
+.btn{
+
+width:100%;
+
+}
+
+}
