@@ -74,7 +74,7 @@ Job-Foundation/
 
 ## 🌐 Live Demo
 
-🔗 **Live Website:https://job-foundation-portal--dudekulasharuk4.replit.app/
+🔗 **Live Website:https://job-foundation-portal--sharukdudekula0.replit.app/jobs/3
 
 ---
 
